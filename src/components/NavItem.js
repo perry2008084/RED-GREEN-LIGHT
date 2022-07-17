@@ -9,6 +9,7 @@ const NavItem = ({ title, links }) => {
         <a
           href={link.href}
           target="_blank"
+          rel="noreferrer"
           className="text-cyan-500 hover:text-cyan-300 visited:text-cyan-800 visited:hover:text-cyan-600"
         >
           {link.name}
