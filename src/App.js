@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavProvider } from './store/NavContext';
 import "./App.css";
 import Header from "./components/Header";
 import Content from "./components/Content";
@@ -16,14 +17,16 @@ function App() {
   };
 
   return (
-    <div className="m-8">
-      <Header changeMode={handleChangeMode}></Header>
-      {mode === PAGE_MODE_NORMAL && <Content></Content>}
-      {mode === PAGE_MODE_EDIT && (
-        <ContentEdit changeMode={handleChangeMode}></ContentEdit>
-      )}
-      <Footer></Footer>
-    </div>
+    <NavProvider>
+      <div className="m-8">
+        <Header changeMode={handleChangeMode}></Header>
+        {mode === PAGE_MODE_NORMAL && <Content></Content>}
+        {mode === PAGE_MODE_EDIT && (
+          <ContentEdit changeMode={handleChangeMode}></ContentEdit>
+        )}
+        <Footer></Footer>
+      </div>
+    </NavProvider>
   );
 }
 

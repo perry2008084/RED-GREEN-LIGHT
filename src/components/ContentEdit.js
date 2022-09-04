@@ -1,4 +1,5 @@
 import { PAGE_MODE_NORMAL } from "../constants";
+import NavListEdit from "./NavListEdit";
 
 const ContentEdit = ({ changeMode }) => {
   const cancel = () => {
@@ -15,7 +16,10 @@ const ContentEdit = ({ changeMode }) => {
 
   return (
     <div>
-      <h2>ContentEditMode</h2>
+      <div>
+        <NavListEdit></NavListEdit>
+        <button className="my-3 px-6 py-3 w-52 mx-auto bg-sky-400 rounded-xl items-center">+</button>
+      </div>
       <div className="flex gap-3 justify-center">
         <button
           className="w-24 h-8 rounded bg-slate-300 hover:bg-slate-400"

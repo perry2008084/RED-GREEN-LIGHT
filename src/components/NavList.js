@@ -1,10 +1,12 @@
-import { MOCK_DATA } from "../api";
+import { useNavs } from "../store/NavContext";
 import NavItem from "./NavItem";
 
 const NavList = () => {
-  const data = MOCK_DATA;
+  const data = useNavs();
+  const activeCategory = data.activeCategory;
+  const nav = data.navs.find(nav => nav.categoryId === activeCategory);
 
-  return data.map((category, index) => (
+  return nav.content.map((category, index) => (
     <NavItem
       key={index}
       title={category.title}
