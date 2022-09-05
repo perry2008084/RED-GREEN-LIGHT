@@ -1,10 +1,14 @@
-import { PAGE_MODE_EDIT } from "../constants";
+import { PAGE_MODE_EDIT, SWITCH_MODE } from "../constants";
+import { useNavsDispatch } from "../store/NavContext";
 
-const Header = ({ changeMode }) => {
+const Header = () => {
+  const dispatch = useNavsDispatch();
+
   const settingHandle = () => {
-    if (changeMode) {
-      changeMode(PAGE_MODE_EDIT);
-    }
+    dispatch({
+      type: SWITCH_MODE,
+      mode: PAGE_MODE_EDIT,
+    });
   };
 
   return (

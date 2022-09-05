@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
-import { CHANGE_CATEGORY } from "../constants";
-import { MOCK_DATA } from '../api';
+import { CHANGE_CATEGORY, SWITCH_MODE } from "../constants";
+import { MOCK_DATA } from "../api";
 
 const NavContext = createContext(null);
 
@@ -27,13 +27,18 @@ export function useNavsDispatch() {
 }
 
 function navsReducer(navs, action) {
-  console.log('reducer: ', action);
+  console.log("reducer: ", action);
 
   switch (action.type) {
+    case SWITCH_MODE:
+      return {
+        ...navs,
+        mode: action.mode,
+      };
     case CHANGE_CATEGORY:
       return {
         ...navs,
-        activeCategory: action.activeCategory
+        activeCategory: action.activeCategory,
       };
     case "added":
       break;

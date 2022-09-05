@@ -63,7 +63,7 @@ export const MOCK_DATA = {
         {
           title: "小众",
           links: [
-            { name: "youtue music", href: "https://music.youtube.com" },
+            { name: "youtube music", href: "https://music.youtube.com" },
           ],
         },
       ],

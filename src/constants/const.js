@@ -7,6 +7,7 @@ export const PAGE_MODE_EDIT = "edit"; // 编辑模式
 /**
  * actions
  */
+export const SWITCH_MODE = "switch_mode"; // 切换模式
 export const CHANGE_CATEGORY = "change_category"; // 切换激活的类别
 export const ADD_CATEGORY = "add_category"; // 添加类别
 export const DEL_CATEGORY = "del_category"; // 删除类别

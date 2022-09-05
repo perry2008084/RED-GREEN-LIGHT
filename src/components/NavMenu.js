@@ -1,5 +1,5 @@
 import { useNavs, useNavsDispatch } from "../store/NavContext";
-import { CHANGE_CATEGORY } from "../constants";
+import { CHANGE_CATEGORY, PAGE_MODE_EDIT } from "../constants";
 
 /**
  * 菜单
@@ -7,6 +7,8 @@ import { CHANGE_CATEGORY } from "../constants";
 const NavMenu = ({ mode }) => {
   const data = useNavs();
   const dispatch = useNavsDispatch();
+
+  const editing = data.mode === PAGE_MODE_EDIT;
 
   return (
     <>
@@ -29,6 +31,11 @@ const NavMenu = ({ mode }) => {
             {nav.category}
           </li>
         ))}
+
+        {/* edit mode */}
+        {
+          editing && <button>新增</button>
+        }
       </ul>
     </>
   );
